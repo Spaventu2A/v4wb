@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ResponsiveContainer, PieChart, Pie, Cell } from "recharts";
 import { DashboardData } from "@/types/dashboard";
 
-const COLORS = ['#D741A7', '#3A1772', '#5398BE', '#F2CD5D', '#DEA54B'];
+const COLORS = ['#007CBE', '#FFD639']; // Compétences traitées et non traitées
 
 export function CompetencesProgress({ data }: { data: DashboardData['competencesData'] }) {
   return (
@@ -45,10 +45,10 @@ export function CompetencesProgress({ data }: { data: DashboardData['competences
                   </PieChart>
                 </ResponsiveContainer>
                 <p className="text-sm font-medium mt-2 text-[#3A1772]">{entry.name}</p>
-                <p className="text-sm text-[#D741A7]">{entry.completed}% traité</p>
+                <p className="text-sm text-competence-treated">{entry.completed}% traité</p>
                 <div className="mt-2">
                   {Object.entries(entry.details).map(([key, value]) => (
-                    <p key={key} className="text-xs text-[#5398BE]">{key}: {value}%</p>
+                    <p key={key} className="text-xs text-[#001F54]">{key}: {value}%</p>
                   ))}
                 </div>
               </div>

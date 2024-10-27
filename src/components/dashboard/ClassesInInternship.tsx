@@ -15,17 +15,16 @@ export function ClassesInInternship({ classes }: { classes: DashboardData['class
           <CardTitle>Classes en stage</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="flex items-center justify-center h-full py-8">
-            <div className="text-center">
-              <Briefcase className="h-16 w-16 mx-auto text-[#034078]" />
-              <p className="text-2xl font-bold text-[#034078] mt-4">{classes.length}</p>
-              <p className="text-sm text-[#001F54] mt-2">Classes actuellement en stage</p>
-              <ul className="mt-4 space-y-2">
-                {classes.map((className, index) => (
-                  <li key={index} className="text-lg text-[#034078]">{className}</li>
-                ))}
-              </ul>
-            </div>
+          <div className="flex flex-col items-center justify-center h-full py-6">
+            <Briefcase className="h-12 w-12 text-[#034078] mb-2" />
+            <p className="text-sm text-[#001F54] mb-4">Classes actuellement en stage</p>
+            <ul className="w-full space-y-3">
+              {classes.map((className, index) => (
+                <li key={index} className="text-xl font-semibold text-[#034078] bg-[#E3F2FD] py-2 px-4 rounded-md shadow-sm">
+                  {className}
+                </li>
+              ))}
+            </ul>
           </div>
         </CardContent>
       </Card>
